@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-database.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="realtime.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-light bg-light p-2">
+
+        <div class="d-flex col-12 col-md-3 col-lg-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
+            <a href="#" class="navbar-brand">LoraWan</a>
+            <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="flase" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="col-12 col-md-4 col-lg-2">
+            <input type="text" class="form-control form-control-dark" placeholder="search" aria-label="Search">
+        </div>
+
+
+        <div class="dropdown d-grid gap-2 d-md-flex justify-content-md-end ml-2">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item" href="user.html">user</a></li>
+                <li><a class="dropdown-item" href="#">information</a></li>
+                <li><a class="dropdown-item" onclick="signOut()">signout</a></li>
+            </ul>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button onclick="signOut()" id="signOut" class="btn btn-secondary navbar-btn p-1 ml-2 ">Sign Out</button>
+        </div>
+
+
+
+
+
+
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collpase">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="realtime.html" class="nav-link active" aria-current="page">
+                                <i data-feather="home"></i>
+                                <span class="ml-2">Dashboard </span>
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active" aria-current="page">
+                                <i data-feather="user"></i>
+                                <span class="ml-2">admin </span>
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="main.html" class="nav-link active" aria-current="page">
+                                <i data-feather="map"></i>
+                                <span class="ml-2">map </span>
+
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://fireboard.xyz/show--MT57ykDGWsxV1d6HLxr.html" class="nav-link active" aria-current="page">
+                                <i data-feather="bar-chart"></i>
+                                <span class="ml-2">chart </span>
+
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="image.html" class="nav-link active" aria-current="page">
+                                <i data-feather="image"></i>
+                                <span class="ml-2">image </span>
+
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Library</li>
+                    </ol>
+                </nav>
+
+
+
+                </ol>
+                </nav>
+                <h1 class="h2">Dashboard</h1>
+                <p> test </p>
+
+                <div class="row my-4">
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-2">
+                        <div class="card">
+                            <h5 class="card-header">Customers</h5>
+                            <div class="card-body">
+                                <h5 class="card-title">Test Security system 1</h5>
+                                <p class="card-text">test 1 april </p>
+                                <p class="card-title text-success">10%</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-2">
+                        <div class="card">
+                            <h5 class="card-header">Customers</h5>
+                            <div class="card-body">
+                                <h5 class="card-title">bobobo</h5>
+                                <p class="card-text">test 1 april </p>
+                                <p class="card-title text-success">10%</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-2">
+                        <div class="card">
+                            <h5 class="card-header">Customers</h5>
+                            <div class="card-body">
+                                <h5 class="card-title">bobobo</h5>
+                                <p class="card-text">test 1 april </p>
+                                <p class="card-title text-success">10%</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-xl-8 mb-4 mb-lg-0">
+                            <div class="container">
+                                <table class="table" id="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Data Keys</th>
+                                            <th scope="col">Output</th>
+                                            <th scope="col">Time</th>
+                                            <th scope="col">Delete</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </main>
+
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyCphxQAhtqzFoNKvgEk3rmD9Y9fB5N1NM8",
+            authDomain: "wireless-security-system.firebaseapp.com",
+            databaseURL: "https://wireless-security-system-default-rtdb.firebaseio.com",
+            projectId: "wireless-security-system",
+            storageBucket: "wireless-security-system.appspot.com",
+            messagingSenderId: "1042898411353",
+            appId: "1:1042898411353:web:168c83d72581697ebbf648",
+            measurementId: "G-6MK9HE890S"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+
+    <script src="app.js"></script>
+    <script src="realtime.js"></script>
+    <script>
+        feather.replace()
+    </script>
+
+</body>
+
+</html>
